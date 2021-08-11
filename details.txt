@@ -1,0 +1,2 @@
+CustomerA ProductA xyz.com 2021-11-09 10
+CustomerB ProductB abc.com 2020-10-08 8
