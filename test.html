@@ -1,0 +1,89 @@
+<head>
+<script type="text/javascript">
+function create_validate() {
+	if(document.compose.CustomerID.value == '') {
+		alert('Customer ID is mandatory!!');
+		document.compose.CustomerID.focus();
+		return false;
+	}
+	if(document.compose.ProductName.value == '') {
+		alert('Product name is mandatory!!');
+		document.compose.ProductName.focus();
+		return false;
+	}
+	if(document.compose.Domain.value == '') {
+		alert('Domain is mandatory!!');
+		document.compose.Domain.focus();
+		return false;
+	}
+	if(document.compose.StartDate.value == '') {
+		alert('Start date is mandatory!!');
+		document.compose.StartDate.focus();		
+		return false;
+	}
+	if(document.compose.DurationMonths.value == '') {
+		alert('Duration months is mandatory!!');
+		document.compose.DurationMonths.focus();
+		return false;
+	}
+}
+
+function onlyAlphabets(e,t) {
+	try {
+	 if (window.event) {
+		 var charCode = window.event.keyCode;
+	 }
+	 else if (e) {
+		 var charCode = e.which;
+	 }
+	 else { return true; }
+	 if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123) || (charCode >= 48 && charCode <= 57))
+		 return true;
+	 else
+		 return false;
+	}
+	catch (err) {
+	 alert(err.Description);
+	}
+ }
+</script>
+</head>
+<body>
+<br>
+<br>
+<b>Please fill in the below information:</b><br>
+<br>
+<form enctype="multipart/form-data" name="compose" action="info.pl" method="post">
+<table>
+<tr>
+<td>
+Customer ID:  
+</td><td><input type="text" name="CustomerID" size="25" maxlength="50" autocomplete="off" onkeypress="return onlyAlphabets(event,this);"><br>
+</td>
+</tr><tr>
+<td>
+Product Name:  
+</td><td><input type="text" name="ProductName" size="25" autocomplete="off" maxlength="50"><br>
+</td>
+</tr><tr>
+<td>
+Domain:  
+</td><td><input type="text" name="Domain" size="25" autocomplete="off" maxlength="50"><br>
+</td>
+</tr><tr>
+<td>
+Start date:  
+</td><td><input type="text" name="StartDate" size="25" autocomplete="off" maxlength="50"><br>
+</td>
+</tr><tr>
+<td>
+Duration months:  
+</td><td><input type="text" name="DurationMonths" size="25" autocomplete="off" maxlength="50"><br>
+</td>
+</tr><tr>
+<td><input type="submit" value="Add details" onclick="return create_validate();">
+</td></tr>
+</table>
+</form>
+</body>
+</html>
